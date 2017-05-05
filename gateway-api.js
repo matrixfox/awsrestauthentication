@@ -56,7 +56,7 @@ var stringToSign =  'AWS4-HMAC-SHA256\n' +
                     canonicalReqHash;
 
 // get our Signing Key
-var signingKey = getSignatureKey(crypto, secret_key, authDate, region, myService);
+var signingKey = getSignatureKey(crypto, config.secret_key, authDate, config.region, config.awsService);
 
 // Sign our String-to-Sign with our Signing Key
 var authKey = crypto.HmacSHA256(stringToSign, signingKey);
